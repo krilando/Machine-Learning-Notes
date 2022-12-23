@@ -1,5 +1,5 @@
 # Machine Learning
----
+
 ## 1 机器学习分类
 ### 1.1 Supervised Learning
 拟合input和output，从而根据input预测output
@@ -10,7 +10,7 @@
 1. Clustering 聚类：比如“相关推荐”，通过将没有label的数据，即在没有人指导的情况下根据特征进行分组（grouping them into clusters）
 2. Anomaly Detection 异常检测：检测异常事件
 3. Dimensionality Reduction 降维：压缩极大的数据集
----
+
 ## 2 Linear Regression
 ### 2.1 Training set: 
 Notation:
@@ -40,7 +40,9 @@ J(w,b)=\frac{1}{2m}\sum_{i=1}^m (\widehat{y}^{(i)} - y^{(i)})^2\\
 w=w-\alpha \frac{\partial J(w,b)}{\partial {w}}\\
 b=b-\alpha \frac{\partial J(w,b)}{\partial {b}}\\
 \end{gathered}$
+
 代入：复合函数求偏导
+
 $$
 \begin{aligned}
 w &= w-\alpha \frac{\partial J(w,b)}{\partial {w}}\\
@@ -56,7 +58,7 @@ b&=b-\alpha \frac{\partial J(w,b)}{\partial {b}}\\
 \end{aligned}
 $$
 
----
+
 ## 3 Gradient Descent 梯度下降
 作用：求local minimum
 Simultaneous update of w and b:
@@ -79,5 +81,5 @@ $$
 
 ### 3.2 分类
 1. Batch：每轮计算都用到所有样本，适用于小样本
----
+
 ## 4 Multiple Features
