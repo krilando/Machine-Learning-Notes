@@ -83,3 +83,49 @@ $$
 1. Batch：每轮计算都用到所有样本，适用于小样本
 
 ## 4 Multiple Features
+### 4.1 multiple variables
+![](multiple%20features.png)
+1. $x_j$：第j个fecture
+2. $\vec{x}^{(i)}$：features of $i^{th}$ training example 行向量
+&emsp;&emsp;$\vec{x}^{(2)}=[1416\ 3\ 2\ 40\ ...]$
+3. $\vec{x}{_j}{^{(i)}}$：value of feature j in $i^{th}$ training example
+&emsp;&emsp;$\vec{x}{_3}{^{(2)}}=2$
+### 4.2 Multiple linear regression
+$$
+\begin{aligned}
+f_{\vec{w},b}(\vec{x})& =w_1x_1+w_2x_2+...+w_nx_n+b\\
+& =\vec{w}·\vec{x}+b
+\end{aligned}
+$$
+### 4.3 Vectorization
+使用NumPy库
+~~~py
+w = np.array([1.0,2.5,-3.3])
+b = 4
+x = np.array([10.20.30])
+f = np.dot(w,x) + b
+~~~
+同时对向量中的每一项进行计算
+### 4.4 多元线性的梯度下降
+对于n features:
+$$
+\begin{aligned}
+j = 1,2,...,n\\
+& w_j = w_j-\alpha \frac{1}{m}\sum_{i=1}^m [(f_{\vec{w},b}(\vec{x}^{(i)})-y^{(i)})*x{_j}{^{(i)}}]\\
+& b=b-\alpha \frac{1}{m}\sum_{i=1}^m (f_{\vec{w},b}(\vec{x}^{(i)})-y^{(i)})
+\end{aligned}
+$$
+simultaneously update w_j(for j=1,...,n) and b
+
+- Normal equation
+  - 只能用于线性回归求解w和b，不通过iteration
+  - 当feature很多时，求解慢
+  - 一般用于machine learning libraries
+
+### 4.5 Feature Scaling
+1. 通过对特征进行缩放，改变特征的取值，使特征分布均匀（范围区间不能太大也不能太小，且特征的取值也不能太大或太小），从而便于梯度下降
+![](featureScale.png)
+2. 实现：
+   - 除以最大值，获得
+   - Mean Normalization：求平均，x-平均值/最大值-最小值
+   - Z-score Normalization: 求平均值，x-平均值/标准差
