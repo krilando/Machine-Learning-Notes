@@ -78,6 +78,7 @@ $$
 
 让w无限趋近local minimum的自变量取值：
 ![](gradientDescent.png)
+- 通过绘制$J(\vec{w},b)$关于iterations的函数判断$\alpha$取值是否合适
 
 ### 3.2 分类
 1. Batch：每轮计算都用到所有样本，适用于小样本
@@ -129,3 +130,6 @@ simultaneously update w_j(for j=1,...,n) and b
    - 除以最大值，获得
    - Mean Normalization：求平均，x-平均值/最大值-最小值
    - Z-score Normalization: 求平均值，x-平均值/标准差
+
+### 4.6 Feature Engineering
+通过transforming或combining原始特征，获得新的特征
