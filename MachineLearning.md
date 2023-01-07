@@ -133,3 +133,29 @@ simultaneously update w_j(for j=1,...,n) and b
 
 ### 4.6 Feature Engineering
 通过transforming或combining原始特征，获得新的特征
+
+## 5 Classification
+### 5.1 Binary Classification
+no & yes-negative class & positive class
+### 5.2 Sigmoid/logistic function
+$$
+g(z) = \frac{1}{(1+e^{-z})}\\
+0<g(z)<1
+$$
+#### Logistic Regression
+$$
+\begin{aligned}
+f_{\vec{w},b}(\vec{x})&=g(\vec{w}·\vec{x}+b)\\
+& =\frac{1}{(1+e^{-(\vec{w}·\vec{x}+b)})}\\
+\end{aligned}
+$$
+$f_{\vec{w},b}(\vec{x})$为输出为1的概率，因而当$f_{\vec{w},b}(\vec{x})>=0.5,即g(z)>=0.5，即z=\vec{w}·\vec{x}+b>=0$时，$\hat{y}=1$
+
+- 计算$\vec{w}$ $b$
+  区别于线性回归，逻辑回归方程的代价函数$J(\vec{w},b)$non-convex，有多个局部最小值
+#### Decision Boundary
+$$
+z=\vec{w}·\vec{x}+b=0
+$$
+用于预测，Decision Boundary内部为$\hat{y}=1$
+- Non-linear decision boundaries:根据数据分布确定x的幂次
